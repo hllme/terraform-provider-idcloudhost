@@ -28,7 +28,7 @@ acceptance/smoke test against the real API).
 
 | Resource | Purpose | Status |
 | ---------- | --------- | -------- |
-| `idcloudhost_vm` | VM with native `cloud_init`; async create → poll-until-ready | 📋 |
+| `idcloudhost_vm` | VM with native `cloud_init`; async create → poll-until-ready | 🔨 create/read/delete skeleton, mock-tested only — no acceptance test run yet |
 | `idcloudhost_private_network` | Private network binding for `infra-net` isolation | 📋 |
 | `idcloudhost_floating_ip` | Public edge IP, assigned from the VM side | 📋 |
 | `idcloudhost_s3_bucket` | Object storage for verified DR; `force_destroy` support | 📋 |

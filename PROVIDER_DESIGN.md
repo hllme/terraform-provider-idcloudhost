@@ -51,6 +51,11 @@ mode — using the modern framework is itself a differentiator vs. both referenc
 
 **HTTP client requirements:**
 
+- ⚠️ **Unverified assumption (confirm before first smoke test):** the client sends request
+  bodies as `application/x-www-form-urlencoded`, not JSON, based on public examples of the
+  create-VM call (`vcpu=2&ram=2048&billing_account_id=6`-style params). Responses are still
+  parsed as JSON. If the real API expects a JSON body, this is a one-file fix in
+  `internal/client/client.go` (`doForm`) — flip the encoding, not the whole client shape.
 - Inject `apikey` header centrally; never log it.
 - **Treat the response body as the source of truth for errors.** The API can return
   failures as `{"errors": {...}}` in otherwise-OK-looking responses. Every call must

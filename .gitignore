@@ -1,0 +1,40 @@
+# ── Secrets & local config (NEVER commit) ─────────────────────────────
+.env
+.env.*
+!.env.example
+*.tfvars
+!*.tfvars.example
+*.auto.tfvars
+.terraformrc
+terraform.rc
+
+# ── Terraform (from examples/ and manual smoke tests) ─────────────────
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# ── Go build output ───────────────────────────────────────────────────
+terraform-provider-idcloudhost
+terraform-provider-idcloudhost.exe
+/dist/
+*.test
+*.out
+vendor/
+
+# ── GoReleaser ────────────────────────────────────────────────────────
+dist/
+
+# ── Editor / OS ───────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+sessions/

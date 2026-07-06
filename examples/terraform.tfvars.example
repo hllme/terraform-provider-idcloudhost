@@ -1,0 +1,15 @@
+# Copy to terraform.tfvars in this examples/ dir for a manual confirm-then-destroy
+# smoke test of the provider against the real API. This dir's terraform.tfvars is
+# gitignored. Prefer passing the API key via the IDCLOUDHOST_API_KEY env var instead
+# of putting it here.
+
+# apikey            = "..."   # better: export IDCLOUDHOST_API_KEY
+billing_account_id  = 0        # your IDCloudHost billing account id (int)
+default_location    = "sgp01" # jkt01 | jkt02 | jkt03 | sgp01
+
+# Keep smoke-test VMs tiny — they bill per hour. Destroy immediately after.
+vm_name    = "provider-smoketest"
+vm_vcpu    = 1
+vm_ram     = 1024   # MB
+vm_disks   = 20     # GB
+vm_password = ""    # ≥8 chars, must contain upper + lower + digit
